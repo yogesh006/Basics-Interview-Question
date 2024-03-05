@@ -1,0 +1,11 @@
+ListNode curr = head;
+       if(head == null) return null;
+       if(head.next!=null){
+           if(head.val==head.next.val){
+               head.next = head.next.next;
+               deleteDuplicates(head);
+           }
+           else{
+               deleteDuplicates(head.next);
+           }
+       }

@@ -1,0 +1,22 @@
+ // List<Integer>  ll = new ArrayList<>();
+
+        // while(list1!=null){
+        //     ll.add(list1.val);
+        //     list1 = list1.next;
+
+        // }
+        // while(list2!=null){
+        //     ll.add(list2.val);
+        //     list2 = list2.next;
+        // }
+        // Collections.sort(ll);
+        // ListNode result = new ListNode();
+        // ListNode temp = result;
+
+        // for (int i = 0; i < ll.size(); i++) {
+        //     result.next = new ListNode(ll.get(i));
+        //     result = result.next;
+        // }
+ 
+        // temp = temp.next;
+        // return temp;

@@ -1,0 +1,27 @@
+ int binarySearch(int array[], int x, int low, int high) {
+    
+        while(low<=high){
+      int mid = low + (high - low) / 2;
+
+      if (array[mid] == x)
+        return mid;
+
+      if (array[mid] < x)
+        low = mid + 1;
+
+      else
+        high = mid - 1;
+    }
+    
+    return low;
+   // return high+1;
+  }
+    public int searchInsert(int[] nums, int target) {
+        int l = 0;
+        int r = nums.length-1;
+
+    int m = binarySearch(nums,target,l,r);
+     return m;
+        
+    
+    }

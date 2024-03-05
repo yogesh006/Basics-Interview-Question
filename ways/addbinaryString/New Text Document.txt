@@ -1,0 +1,10 @@
+  public String addBinary(String a, String b) {
+       int m = Integer.parseInt(a,2);
+       int n= Integer.parseInt(b,2);
+       int c= m+n;
+             String s =Integer.toBinaryString(c);
+        return s;
+        // BigInteger d = new BigInteger(a,2);
+        // BigInteger e = new BigInteger(b,2);
+        // BigInteger add = d.add(e);
+        // return add.toString(2);

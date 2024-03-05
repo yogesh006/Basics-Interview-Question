@@ -1,0 +1,23 @@
+ public ListNode deleteDuplicates(ListNode head) {
+      TreeSet<Integer> s = new TreeSet<Integer>();
+      ListNode curr  = head;
+      while(curr!=null){
+          s.add(curr.val);
+          curr = curr.next;
+      }
+      ListNode result = new ListNode();
+      ListNode temp = result;
+       Iterator itr = s.iterator();
+ 
+        while (itr.hasNext()) {
+            result.next = new ListNode((int)itr.next());
+            result=result.next;
+           // System.out.println(itr.next());
+        }
+    //   for(int i = 0;i<s.size();i++){
+    //       result.next = new ListNode(s.get(i));
+    //   }
+      temp = temp.next;
+      return temp;
+        
+    }

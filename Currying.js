@@ -1,32 +1,57 @@
-//1. Curried functions are also an important application of closure. 
-//They split a function with many parameters into functions with only one parameter each.
-// The context between function calls is saved thanks to closures (outer-inner pattern)
+//currying function in javascripts
 
-//2. Currying means that the closure does not have to receive all of its arguments at once, but separately.
+// 
+// Currying is a programming technique in which a function is defined with multiple arguments, but instead of returning the result immediately, it returns a new function that takes the remaining arguments and returns the result. This allows you to create specialized versions of a function by "pre-filling" some of the arguments
+// 
 
-//Closures and Partial function
-//A closure is when you combine some state or context with code so that you can execute that code later bound to those state values even when the origin of the values is now gone. 
-//Partial application is when you bind one or more (but not all) arguments of a function to values using a closure.
+//Normal function write
+// function Addition(a,b,c){
+//     return a+b+c;
+// }
+
+// let res = Addition(3,4,5)
+// console.log(res);
+
+//Closure type function
+
+// function Addition(a){
+//     return function(b){
+//         return function(c){
+//             return a+b+c;    
+//         }
+//     }
+// }
+// // let res = Addition(2)// return full return b and c function
+// // let data = res(4)// return full return c function
+// // let fullthreeAddition = data(5)//return full addtion of three
+// // console.log(fullthreeAddition);
+
+// //In terms of currying 
+// console.log(Addition(4)(2)(11))//Addition(a,b,c)
 
 
+//RealUseCase of Currying
+// userObj ={
+//     name:"Yogesh",
+//     age:28
+// }
+// function userInfo(obj){
+//     return function(userinfo){
+//         return obj[userinfo]
+//     }
+// }
 
-//program currying fn return sum of previous value
+// let res = userInfo(userObj);
+// console.log(res('age'))
 
-const curryFn=()=>{
-    let prevSum =0
-    return (newVal =0)=>{
-        prevSum+=newVal
-        return prevSum
+
+////INFINITE CURRYING
+
+function add(a){
+    return function(b){
+        if(b) return add(a+b)
+        return a;
     }
 }
-const sum = curryFn() //here we store curryfn previous value in sum here clousure is happening as sum is storing prevsum value for further step
-console.log(sum(1))
-console.log(sum(3))
-console.log(sum(4))
-console.log(sum()) 
-//output
-// 1
-// 4
-// 8
-// 8
 
+console.log(add(4)(7)(9)(1)())

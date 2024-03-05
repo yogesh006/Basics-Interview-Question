@@ -1,0 +1,15 @@
+ public boolean isPalindrome(int x) {
+        
+        // int temp = x;
+        // int rem = 0;
+        // while(temp>0){
+        //     int data = temp%10;
+        //     rem = data + rem*10;
+        //     temp  = temp/10;
+        // }
+        // if(rem==x){
+        //     return true;
+        // }
+        // else
+        // return false;
+    }

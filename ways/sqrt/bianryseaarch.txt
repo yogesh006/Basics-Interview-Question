@@ -1,0 +1,23 @@
+long search(int n){
+    int start =0;
+    int end = n;
+    int mid;
+    long ans = 0;
+    while(start<=end){
+        mid= start+(end-start)/2;
+        long square = (long)mid * (long)mid;
+        if(square == n){
+            return mid;
+        }
+        else if(square>n){
+            end = mid-1;
+        }
+        else{
+            ans = mid;
+            start = mid +1;
+        }//mid = start+(end-start)/2;
+    }return ans;
+}
+public int mySqrt(int x) {
+    return (int)search(x);
+}

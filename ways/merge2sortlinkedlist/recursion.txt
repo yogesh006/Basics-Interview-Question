@@ -1,0 +1,21 @@
+//condition
+Make a function where two pointers pointing to the linked list will be passed.
+Now, check which value is less from both the current nodes
+The one with less value makes a recursion call by moving ahead with that pointer and simultaneously append that recursion call with the node
+Also put two base cases to check whether one of the linked lists will reach the NULL, then append the rest of the linked list. 
+
+
+if(list1==null){
+            return list2;
+        }
+        if(list2==null){
+            return list1;
+        }
+        if(list1.val < list2.val){
+            list1.next = mergeTwoLists(list1.next, list2);
+            return list1;
+        }
+        else{
+            list2.next = mergeTwoLists(list1, list2.next);
+            return list2;
+        }

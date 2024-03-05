@@ -1,0 +1,10 @@
+  // public int mySqrt(int x) {
+    //     long i = 1;
+    //     long sq = i*i;
+    //     while(x>=sq){
+    //         i++;
+    //         sq = i*i;
+    //     }
+    //     return (int)(i-1);
+    //    // return (int)(Math.sqrt(x));
+    // }

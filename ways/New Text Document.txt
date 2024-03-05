@@ -1,0 +1,23 @@
+
+BigInteger vs BigDecimal
+Roman to Integer
+Longest Common Prefix
+Remove Duplicates from Sorted Array
+Remove Element
+Investment Plan
+Insurance Plan
+
+k=1
+k*k
+
+8>=k*k  8>=1*1
+k++; //2
+sq = k*k;
+
+8>=2*2
+
+k++; //3
+sq=k*k;
+
+return k-1;
+

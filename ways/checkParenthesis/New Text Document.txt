@@ -1,0 +1,39 @@
+//condition
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type. 
+
+public boolean isValid(String s1) {
+        Stack<Character> s = new Stack<Character>();
+        for(int i=0;i<s1.length();i++){
+            char x = s1.charAt(i);
+            if(x=='(' || x=='{' || x == '['){
+                s.push(x);
+                continue;
+            }
+            if(s.isEmpty()){
+                return false;
+            }
+            char c;
+            switch(x){
+                case ')': 
+                    c = s.pop();
+                    if(c=='{' || c=='[')
+                    return false;
+                    break;
+                case '}':
+                c = s.pop();
+                    if(c=='(' || c=='[')
+                    return false;
+                    break;
+                case ']':
+                c = s.pop();
+                    if(c=='{' || c=='(')
+                    return false;
+                    break;
+                
+            }
+            
+        }
+    return (s.isEmpty());                                                   
+}
